@@ -6,7 +6,6 @@ Course: CPRG 216-B
 Date: 12/12/2024
 '''
 
-rafael-branch
 class Appointment:
 
     def __init__(self, client_name = 0, client_phone = 0, appt_type = 0, day_of_week, start_time_hour):
@@ -43,9 +42,14 @@ class Appointment:
     def get_end_time_hour(self):
         return self.__start_time_hour + 1  
     
-    #def set_client_name
-    #def set_client_phone
-    #def set appt_type
+    def set_client_name (self, client_name):
+        self.__client_name = client_name
+
+    def set_client_phone (self, client_phone):
+        self.__client_phone = client_phone
+    
+    def set_appt_type (self, appt_type):
+        self.__appt_type = appt_type
 
     def schedule(self, name, phone, appt): # done by Clayton
         self.__client_name = name
@@ -68,5 +72,7 @@ class Appointment:
         appt_type = self.__appt_type
         day_of_week = self.__day_of_week
         start_time_hour = self.__start_time_hour
+        print(f'{self.__client_name:<20}, {self.__client_phone:<}, {self.__appt_type:<}, {self.__day_of_week:<}, {self.__start_time_hour:<}')
 
-main
+
+
