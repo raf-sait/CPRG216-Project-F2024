@@ -15,7 +15,10 @@ class Appointment:
         self.__day_of_week = day_of_week
         self.__start_time_hour = start_time_hour
 
-    #def get client_name
+    def get_client_name(self):
+        return self.__client_name
+
+
     #def get client_phone
     #def get appt_type
     #def get_appt_type_desc()
