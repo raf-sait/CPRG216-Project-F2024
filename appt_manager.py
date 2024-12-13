@@ -5,8 +5,6 @@ Assignment: Final Project (Appointment Manager)
 Course: CPRG 216-B
 Date: 12/12/2024
 '''
-rafael-branch
-
 
 
 # Empty lists/values that become populated with user input throughout the program
@@ -33,33 +31,8 @@ def create_appointment():
         print(f'OK, {client_name}s appointment is scheduled!')
 
 
-def find_appointment_by_name():
-    client_name = input('Enter Client Name: ')
-    print
-
+#def change_appointment_by_day_time()
 #def create_weekly_calendar():
-
-
-
-
-    '''
-    Function name:
-    Description:
-    Parameters:
-    Returns:
-    '''
-
-def load_scheduled_appointments():
-
-
-
-
-    '''
-    Function name:
-    Description:
-    Parameters:
-    Returns:
-    '''
 
 def print_menu():
     print('1) Schedule an appointment')
@@ -71,12 +44,11 @@ def print_menu():
     print('7) Calculate total weekly fees')
     print('9) Exit the system')
 
-    '''
-    Function name:
-    Description:
-    Parameters:
-    Returns:
-    '''
+#def calculate_fees_per_day():
+#def calculate_weekly_fees():
+#def save_scheduled_appointments():
+#def load_scheduled_appointments():
+
 
 def main():
     previous_scheduled_appointment = ''
@@ -100,36 +72,27 @@ def main():
     if menu_choice == '1':
         print()
         print('** Schedule an appointment **')
-        create_appointment()
-    
     elif menu_choice == '2':
         print()
         print('** Find appointment by name **')
-
     elif menu_choice == '3':
         print()
         print('** Print calendar for a specific day **')
-    
     elif menu_choice == '4':
         print()
         print('** Cancel an appointment **')
-    
     elif menu_choice == '5':
         print()
         print('** Change an appointment **')
-    
     elif menu_choice == '6':
         print()
         print('** Calculate total fees for a day **')
-    
     elif menu_choice == '7':
         print()
         print('** Calculate total weekly fees **')
-    
     elif menu_choice == '9':
         print()
         print('** Exit the System **')
-
         save_appointments_to_file = input('Would you like to save all scheduled appointments to a file (Y/N?)').upper()
         if save_appointments_to_file == 'y':
             print('placeholder')
@@ -137,10 +100,8 @@ def main():
         else:
             print('placeholder 2')
             print('Good Bye!')
-
     else:
         print('Invalid input')
 
 if __name__ == '__main__':
     main()
-main
