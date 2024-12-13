@@ -5,33 +5,80 @@ Assignment: Final Project (Appointment Manager)
 Course: CPRG 216-B
 Date: 12/12/2024
 '''
+import os 
+appointment_list = []
+available_timeslots = (9,10, 11, 12, 13, 14, 15, 16)
+available_days = ('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday')
+appointment_types = [1,2,3,4]
 
 def create_weekly_calendar():
+   appointment_list.clear()
+   for day in available_days:
+    for hour in available_timeslots:
+     for type in appointment_types:
+        free_appointments = (day,hour,type) 
+        appointment_list.append(free_appointments)    
 
-
-
-
-    '''
-    Function name:
-    Description:
-    Parameters:
-    Returns:
-    '''
+def save_scheduled_appointments():
+    file_name = input("Enter a file name")
+    if os.path.exists(file_name):
+        option_select = input(f"there is already a file with the name {file_name}, please select O to overwrite or R to repeat the filename")
+        if option_select == "O".upper:
+            saved_appointments = open(f"{file_name},", "w")
+            saved_appointments.write({appointment_list})
+            saved_appointments.write()
+        elif option_select == "R".upper:
+             saved_appointments = open(f"{file_name},", "w")
+             saved_appointments.write({appointment_list})
+             saved_appointments.write()
+             print(f"A new file has been created using the name {file_name}")
+    else:
+         saved_appointments = open(f"{file_name},", "w")
+         saved_appointments.write({appointment_list})
+         saved_appointments.write()
 
 def load_scheduled_appointments():
+    file_load_name = input("Please enter the file name you want to load: ")
+    if os.path.exists(file_load_name):
+        with open(f"{file_load_name}", "r") as f:
+            for line in f: 
+                print(line.rstrip())
+    else:
+        print("File not found")
 
+def find_appointment_by_time():
+    specific_appointments = []
+    day = str(input(" Enter the day you would like to search for: ")).upper
+    time = int(input("Enter a time to search for appointments"))
+    for appointments in appointment:
+        if appointment.start_time_hour == time and appoinment.day_of_week == day:
+            specific_appointments.append(appointments)
+            print(f"{specific_appointments}")
+            specific_appointments.clear
 
-
-
-    '''
-    Function name:
-    Description:
-    Parameters:
-    Returns:
-    '''
+def show_appointments_by_name():
+    matching_name=[]
+    entered_name = input("Please enter the name you would like to search: ")
+    
+def create_appointment():
+    appointment_day = input('What day: ')
+    if appointment_day not in available_days:
+        print(f'{appointment_day} is invalid day or the salon is closed')
+    start_hour = input('Enter start hour (24 hour clock)')
+    if start_hour < 16 or start_hour < 9:
+        print('Sorry that time slot is not in the weekly calendar!')
+    client_name = input('Client name: ')
+    client_number = input('Client Phone: ')
+    print('Appointment types')
+    print('1: Mens Cut $40, 2: Ladies Cut $60, 3: Mens Colouring $40, 4: Ladies Colouring $80')
+    appointment_type = input('Type of Appointment: ')
+    if appointment_type != ('1', '2', '3', '4'):
+        print('')
+    else:
+        print(f'OK, {client_name}s appointment is scheduled!')
 
 def print_menu():
-    print('1) Schedule an appointment')
+    print('1) Create new weekly calendar')
     print('2) Find appointment by name')
     print('3) Print calendar for a specific day')
     print('4) Cancel an appointment')
@@ -40,74 +87,71 @@ def print_menu():
     print('7) Calculate total weekly fees')
     print('9) Exit the system')
 
-    '''
-    Function name:
-    Description:
-    Parameters:
-    Returns:
-    '''
+#def calculate_fees_per_day():
+#def calculate_weekly_fees():
+#def save_scheduled_appointments():
+#def load_scheduled_appointments():
 
 def main():
-    previous_scheduled_appointment = ''
     
-    print('Starting the Appointment Manager System')
+    
+    print(f'\nStarting the Appointment Manager System')
     print('Weekly calendar created')
     
-    previously_scheduled_appointment = input('Would you like to load previously scheduled appointments from a file (Y/N?)').upper()
-    if previous_scheduled_appointment == 'y':
-        print('placeholder')
-    else:
-        print('placeholder 2')
+    previously_scheduled_appointment = input(f'Would you like to load previously scheduled appointments from a file (Y/N?)').upper()
+    if previously_scheduled_appointment == 'y':
+        load_scheduled_appointments()
     
+    print('')
     print(f'='*40)
     print(f'Hair Salon Appointment Manager')
     print(f'='*40)
 
     print_menu()
     menu_choice = input('Enter your selection: ')
-    
-    if menu_choice == '1':
-        print()
-        print('** Schedule an appointment **')
-    
-    elif menu_choice == '2':
-        print()
-        print('** Find appointment by name **')
 
-    elif menu_choice == '3':
-        print()
-        print('** Print calendar for a specific day **')
-    
-    elif menu_choice == '4':
-        print()
-        print('** Cancel an appointment **')
-    
-    elif menu_choice == '5':
-        print()
-        print('** Change an appointment **')
-    
-    elif menu_choice == '6':
-        print()
-        print('** Calculate total fees for a day **')
-    
-    elif menu_choice == '7':
-        print()
-        print('** Calculate total weekly fees **')
-    
-    elif menu_choice == '9':
-        print()
-        print('** Exit the System **')
-
-        save_appointments_to_file = input('Would you like to save all scheduled appointments to a file (Y/N?)').upper()
-        if save_appointments_to_file == 'y':
-            print('placeholder')
+    while menu_choice != ['1', '2', '3', '4', '5', '6', '7', '9']:
+        if menu_choice == '1':
+            print()
+            print('** Schedule an appointment **')
+            create_weekly_calendar()
+            return
+        elif menu_choice == '2':
+            print()
+            print('** Find appointment by name **')
+            return
+        elif menu_choice == '3':
+            print()
+            print('** Print calendar for a specific day **')
+            return
+        elif menu_choice == '4':
+            print()
+            print('** Cancel an appointment **')
+            return
+        elif menu_choice == '5':
+            print()
+            print('** Change an appointment **')
+            return
+        elif menu_choice == '6':
+            print()
+            print('** Calculate total fees for a day **')
+            return
+        elif menu_choice == '7':
+            print()
+            print('** Calculate total weekly fees **')
+            return
+        if menu_choice == '9':
+            print()
+            print('** Exit the System **')
+            save_appointments_to_file = input('Would you like to save all scheduled appointments to a file (Y/N?)').upper()
+            if save_appointments_to_file == 'y':
+                save_appointments_to_file()
             print('Good Bye!')
+            return
         else:
-            print('placeholder 2')
-            print('Good Bye!')
-
-    else:
-        print('Invalid input')
+            print(f'\nInvalid option \n')
+            print_menu()
+            menu_choice = input('Enter your selection: ')
 
 if __name__ == '__main__':
     main()
