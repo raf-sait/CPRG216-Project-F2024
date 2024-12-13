@@ -14,7 +14,7 @@ class Appointment:
         self.__appt_type = appt_type #Appointment property
         self.__day_of_week = day_of_week
         self.__start_time_hour = start_time_hour
-
+        
     def get_client_name(self):
         return self.__client_name
 
@@ -25,11 +25,14 @@ class Appointment:
         return self.__appt_type
 
     def get_day_of_week(self): 
-        return self.__day_of_week
-
+        return self.__day_of_week   
+    
     def get_start_time_hour(self): 
         return self.__start_time_hour
-
+    
+    def get_end_time_hour(self):
+        return self.__start_time_hour + 1  
+    
     def get_appt_type_desc(self):
         appt_num = input("Please enter your appointment type from the following options for a description (0,1,2,3,4,): ")
         if appt_num == 0:
@@ -44,10 +47,9 @@ class Appointment:
             print("Ladies Colouring")
         else:
             print("Not a valid input")
-        
-    def get_end_time_hour(self):
-        return self.__start_time_hour + 1  
-    
+        return self.get_appt_type_desc
+ 
+  
     def set_client_name (self, client_name):
         self.__client_name = client_name
 
