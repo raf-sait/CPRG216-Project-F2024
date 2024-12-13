@@ -122,9 +122,6 @@ def save_scheduled_appointments():
          saved_appointments.write()
     return 'Yes'
 
-
-
-
 def load_scheduled_appointments():
     file_load_name = input("Please enter the file name you want to load: ")
     if os.path.exists(file_load_name):
@@ -150,6 +147,19 @@ def show_appointments_by_name():
     entered_name = input("Please enter the name you would like to search: ")
     return 'Yes'
 
+def find_appointment_by_time():
+    specific_appointments = []
+    day = str(input(" Enter the day you would like to search for: ")).upper
+    time = int(input("Enter a time to search for appointments"))
+    for appointments in appointment:
+        if appointment.start_time_hour == time and appoinment.day_of_week == day:
+            specific_appointments.append(appointments)
+            print(f"{specific_appointments}")
+            specific_appointments.clear
+
+def show_appointments_by_name():
+    matching_name=[]
+    entered_name = input("Please enter the name you would like to search: ")
     
 def create_appointment():
     day_of_week = input('What day: ').upper()
@@ -173,7 +183,6 @@ def create_appointment():
         appointment.schedule(client_name,client_phone,appt_type)
         print(f'OK, {client_name}s appointment is scheduled!')
     return 'Yes'
-
 
 def print_menu():
     print('1) Create new weekly calendar')
@@ -247,8 +256,6 @@ def main():
                 print('placeholder 2')
                 print('Good Bye!')
                 exit()
-        else:
-            print('Invalid input')
 
 if __name__ == '__main__':
     main()
