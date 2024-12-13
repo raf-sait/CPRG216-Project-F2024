@@ -6,7 +6,37 @@ Course: CPRG 216-B
 Date: 12/12/2024
 '''
 
-def create_weekly_calendar():
+
+
+# Empty lists/values that become populated with user input throughout the program
+appointment_list = []
+available_timeslots = (9, 10, 11, 12, 13, 14, 15, 16)
+available_days = ('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday')
+
+
+def create_appointment():
+    appointment_day = input('What day: ')
+    if appointment_day not in available_days:
+        print(f'{appointment_day} is invalid day or the salon is closed')
+    start_hour = input('Enter start hour (24 hour clock)')
+    if start_hour < 16 or start_hour < 9:
+        print('Sorry that time slot is not in the weekly calendar!')
+    client_name = input('Client name: ')
+    client_number = input('Client Phone: ')
+    print('Appointment types')
+    print('1: Mens Cut $40, 2: Ladies Cut $60, 3: Mens Colouring $40, 4: Ladies Colouring $80')
+    appointment_type = input('Type of Appointment: ')
+    if appointment_type != ('1', '2', '3', '4'):
+        print('')
+    else:
+        print(f'OK, {client_name}s appointment is scheduled!')
+
+
+def find_appointment_by_name():
+    client_name = input('Enter Client Name: ')
+    print
+
+#def create_weekly_calendar():
 
 
 
@@ -69,6 +99,7 @@ def main():
     if menu_choice == '1':
         print()
         print('** Schedule an appointment **')
+        create_appointment()
     
     elif menu_choice == '2':
         print()

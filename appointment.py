@@ -19,8 +19,13 @@ class Appointment:
         return self.__client_name
 
 
-    #def get client_phone
-    #def get appt_type
+    #def_get client_phone(self)
+        return self.__client_phone
+
+    #def get appt_type(self)
+
+
+
     #def get_appt_type_desc()
     #def get_end_time_hour()
     #def set client_name
