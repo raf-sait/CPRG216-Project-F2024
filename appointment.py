@@ -6,6 +6,7 @@ Course: CPRG 216-B
 Date: 12/12/2024
 '''
 
+rafael-branch
 class Appointment:
 
     def __init__(self, client_name = 0, client_phone = 0, appt_type = 0, day_of_week, start_time_hour):
@@ -35,3 +36,5 @@ class Appointment:
     #def cancel()
     #def format_record()
     #def __str__()
+
+main
