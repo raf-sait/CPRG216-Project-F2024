@@ -186,7 +186,22 @@ def change_appointment_by_day_time():
     appointment_to_change.set_start_time_hour(new_time)
     print("Appointment updated successfully!")
 
+def calculate_fees_per_day():
+    day_for_total_fees = input('What day: ').title
+    total_fees = 0
 
+    for appointments in appointment_list:
+        if appointment.Appointment.get_day_of_week() == day_for_total_fees: 
+            appointment_type = appointment.Appointment.get_appt_type()
+            if appointment_type == 1 or 3:
+                fee = 40
+            elif appointment_type == 2:
+                fee = 60
+            elif appointment_type == 4:
+                fee = 80
+            
+            total_fees += fee
+    print(f'Total fees for {day_for_total_fees} is ${total_fees}')
 
 
 
